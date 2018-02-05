@@ -91,7 +91,7 @@ Hungry.add_paths({
 
 Practice1 = Room.new("Practice1",
 """
-Narrator: 'You arrive at the mountain. You have difficulty putting on your skies.
+Narrator: 'You arrive at the cross country track. You have difficulty putting on your skies.
 You try to musterup all of the strength you can to go to the old pine tree that is 50 ft tall.
 You look up as it towers over you and notice there is a seat lying against it's base. 
 You rush over making sure you are the only one there. Starting to lay your head back, your eyes start to shut. 
@@ -101,7 +101,7 @@ No one knows it yet, not even yourself, but you are in a food coma.
 You look around and notice there is no one there, no annoying kids; no coaches; no annoying tourists... it was just you. 
 You look down at your watch and you noticed it was 9:30, which is one hour after you were supposed to be on the hill.
 
-\n \t You get up frantically, knowing that your coach will be pissed at you. You feel agitation in your stomach you do not feel that you should stop. \n You get up and start rushing to the lift. You hop on, and you start shaking: the idea of angering your coach gets to you. \n You reach the top...
+\n \t You get up frantically, knowing that your coach will be pissed at you. You feel agitation in your stomach you do not feel that you should stop. \n You get up and start rushing around the track to find everyone. You are running and start shaking: the idea of angering your coach gets to you. \n You reach the start...
 
 You start the 'Jesus walk' and thinking to yourself 'I am going to die today... Nice to know you world.' Your coach comes into view.
 
@@ -113,7 +113,7 @@ You start to feel adrenaline rushing through your veins. He begins to yell at yo
 """)
 Practice2 = Room.new("Practice2",
 """
-Narrator: 'You arrive at the mountain. You have difficulty putting on your skies.
+Narrator: 'You arrive at the cross country track. You have difficulty putting on your skies.
 You try to musterup all of the strength you can to go to the old pine tree that is 50 ft tall.
 You look up as it towers over you and notice there is a seat lying against it's base. 
 You rush over making sure you are the only one there. Starting to lay your head back, your eyes start to shut. 
@@ -123,7 +123,7 @@ No one knows it yet, not even yourself, but you are in a food coma.
 You look around and notice there is no one there, no annoying kids; no coaches; no annoying tourists... it was just you. 
 You look down at your watch and you noticed it was 9:30, which is one hour after you were supposed to be on the hill.
 
-\n \t You get up frantically, knowing that your coach will be pissed at you. You feel agitation in your stomach you do not feel that you should stop. \n You get up and start rushing to the lift. You hop on, and you start shaking: the idea of angering your coach gets to you. \n You reach the top...
+\n \t You get up frantically, knowing that your coach will be pissed at you. You feel agitation in your stomach you do not feel that you should stop. \n You get up and start rushing around the track to find everyone. You are running and start shaking: the idea of angering your coach gets to you. \n You reach the start...
 
 You start the 'Jesus walk' and thinking to yourself 'I am going to die today... Nice to know you world.' Your coach comes into view.
 
@@ -159,26 +159,26 @@ Good Bye
 
 Hike1 = Room.new("Hike1",
 """
-\tYou start hiking the air is thin, and it gets increasingly difficult as time goes on. Although you look forward \nto the time when you reach the top: it is when you can put your skis on, which you have been carrying, and ski down.
+\tYou start hiking the air is thin, and it gets increasingly difficult as time goes on. Although you look forward \nto the time when you start: it is when you can have a bit of water on a hot summer day.
 
-\tOn the third time going up your stomach begins to hurt. You do not know what it is, so you continue to climb, \nbut as time goes it starts to hurt much more. \nYou try to push yourself even more, while carrying 30 pounds worth of \nequipement, because of the concept of 'NO PAIN NO GAIN...'
+\tOn the third time going around your stomach begins to hurt. You do not know what it is, so you continue to climb, \nbut as time goes it starts to hurt much more. \nYou try to push because of the concept of 'NO PAIN NO GAIN...'
 
 ***
 
-You cannot race tomorrow because your mother is afraid about your health. You miss the scouts, and you do not get recruited to Dartmouth skiing.
+You cannot race tomorrow because your mother is afraid about your health. You miss the scouts, and you do not get recruited to Cornell.
 
 """)
 
 Hike2 = Room.new("Hike2",
 """
-\tYou start hiking the air is thin, and it gets increasingly difficult as time goes on. Although you look forward \nto the time when you reach the top: it is when you can put your skis on, which you have been carrying, and ski down.
+\tYou start hiking the air is thin, and it gets increasingly difficult as time goes on. Although you look forward \nto the time when you start: it is when you can have a bit of water on a hot summer day.
 
-\tOn the third time going up your stomach begins to hurt. You do not know what it is, so you continue to climb, \nbut as time goes it starts to hurt much more. \nYou try to push yourself even more, while carrying 30 pounds worth of \nequipement, because of the concept of 'NO PAIN NO GAIN...'
+\tOn the third time going around your stomach begins to hurt. You do not know what it is, so you continue to climb, \nbut as time goes it starts to hurt much more. \nYou try to push because of the concept of 'NO PAIN NO GAIN...'
 
 ***
 
 You push through the pain. Turns out it was just Indigestion.
-You pushed yourself and ran up the mountain a few times.
+You pushed yourself and ran around a few times.
 
 You end up decreasing your time by 1.6 seconds, which is stellar. 
 Now since you pushed yourself, you are projected to win the race tomorrow 
