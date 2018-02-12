@@ -26,53 +26,41 @@ end
 Intro1 = Room.new("Intro1",
 """
 Welcome, today you will see what it is to be training as an athlete today...
-If you would like to play press space (then click enter), or if you want to quit
+If you would like to play type Name, or if you want to quit
 type 'quit'
 """)
 
-Intro1.add_paths({
-  " " => Name,
-  "quit" => Intro2
-})
-
-Intro2 = Room.new("Intro2",
+Introend = Room.new("Introend",
 """
 Oh ok.... goodbye 
 
 """)
 
-Name1 = Room.new("Name1",
-"""
-Great, let's play!!
-**Before you start playing, you must type the commands exactly how they are written.***
-...
-...
+# Name1 = Room.new("Name1",
+# """
+# Great, let's play!!
+# **Before you start playing, you must type the commands exactly how they are written.***
+# ...
+# ...
 
 
-What is your name? (first name only)
-""")
+# What is your name? (first name only)
+# """)
 
-Name1.add_paths({
-  $name = $stdin.gets.chomp => Breakfast
-})
+
 
 Breakfast = Room.new("Breakfast",
 """
-#{$name}, you walk downstairs, it is six in the morning.
+You walk downstairs, it is six in the morning.
 You can hear your mother reading the newspaper in the kitchen. You are very tired and can barely see. It is one of those mornings... 
 You finally reach the kitchen table and sit down, and your mother looks at you for breakfast.
 
 
-Mom: 'Hello #{$name}, how are you doing today?
-#{$name}: Hi mom
+Mom: 'Hello, how are you doing today?
+You: Hi mom
 Mom: Are you hungry?
-#{$name}: (Yes or no)
+You: (Yes or no)
 """)
-
-Breakfast.add_paths({
-  "yes" => Hungry,
-  "no" => Practice1
-})
 
 Hungry = Room.new("Room",
 """
@@ -81,13 +69,6 @@ You hear all of the different kinds of food your mother has to offer: Bacon and
 eggs, waffles (with butter and syrup), fruit salad, and croissants
 What would you like for breakfast? Type the food you want.
 """)
-
-Hungry.add_paths({
-  "Bacon and eggs" => Practice2,
-  "waffles" => Practice2,
-  "fruit salad" => Practice1,
-  "croissants" => Practice2
-})
 
 Practice1 = Room.new("Practice1",
 """
@@ -135,18 +116,9 @@ You start to feel adrenaline rushing through your veins. He begins to yell at yo
 """)
 
 
-Practice1.add_paths({
-  "continue" => Hike1,
-  "fight" => Home1
-})
-
-Practice2.add_paths({
-  "continue" => Hike2,
-  "fight" => Home1
-})
 
 
-Home1 = Room.new("Home1",
+Death = Room.new("death",
 """
 You begin to scream so much that your face turns red.
 When you finish your coach looks irate.
@@ -186,30 +158,67 @@ if you eat right and push yourself.
 
 """)
 
+# Died = Room.new("Death", "You died.")
+
+Intro1.add_paths({
+  "Name" => Breakfast,
+  "quit" => Introend,
+ 
+})
+
+
+Breakfast.add_paths({
+  "yes" => Hungry,
+  "no" => Practice1,
+})
+
+
+Practice1.add_paths({
+  "continue" => Hike1,
+  "fight" => Death,
+})
+
+Practice2.add_paths({
+  "continue" => Hike2,
+  "fight" => Death,
+})
+
+
+Hungry.add_paths({
+  "Bacon and eggs" => Practice2,
+  "waffles" => Practice2,
+  "fruit salad" => Practice1,
+  "croissants" => Practice2,
+})
+# Name1.add_paths({
+#   $name = $stdin.gets.chomp => Breakfast
+# })
+
 START = Intro1
 
 ROOM_NAMES = {
         'Intro1' => Intro1,
-        'Intro2' => Intro2,
-        'Name1' => Name1,
+        'Introend' => Introend,
+        # 'Name1' => Name1,
         'Breakfast' => Breakfast,
         'Hungry' => Hungry,
         'Practice1' => Practice1,
         'Practice2' => Practice2,
-        'Home' => Home,
-        'Home1' => Home1,
+        # 'Home' => Home,
+        'death' => Death,
         'Hike1' => Hike1,
         'Hike2' => Hike2,
-        'Start' => Start,
+        'START' => START,
     }
     
     def Map::load_room(session)
         # Given a session this will return the right room or nil
-        return ROOM_NAMES[session[:room]]
+        return  ROOM_NAMES[session[:room]]
     end
 
     def Map::save_room(session, room)
         # Store the room in the session for later, using its name
         session[:room] = ROOM_NAMES.key(room)
     end
+
 end
