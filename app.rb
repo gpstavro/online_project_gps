@@ -1,4 +1,3 @@
-
 require 'sinatra'
 require './map.rb'
 
@@ -8,38 +7,37 @@ set :bind, '0.0.0.0'
 
 set :public_folder, "static"
 set :views, "views"
-enable :session
+enable :sessions
 set :session_secret, 'BADSECRET'
 
-
 get '/' do
-    session[:room] = "Intro1"
+    session[:room] = 'START'
     redirect to('/game')
-end
-
-get '/game' do
+  end
+  
+  get '/game' do
     room = Map::load_room(session)
-    # room = Map::Name(:room)
     
     if room
-        erb :show_room, :locals => {:room => room}
-    else
+        erb :show_room, :locals =>{:room => room}
+      else
         erb :you_died
     end
-end
-
-post '/game' do
-    room = Map::load_room(session)
-    action = params[:action]
-    if room
-        next_room = room.go(action) || room.go("*")
-        if next_room
-            Map::save_room(session, next_room)
-        end
-        
-        redirect to('/game')
-    else
-        erb :you_died
-    end
-end
-
+ end
+ 
+ post '/game' do
+   room = Map::load_room(session)
+   action = params[:action]
+   
+   if room
+     next_room = room.go(action) || room.go("*")
+     
+     if next_room
+       Map::save_room(session, next_room)
+     end
+     
+     redirect to('/game')
+   else
+     erb :you_died
+   end
+ end
